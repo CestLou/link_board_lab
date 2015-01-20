@@ -1,0 +1,19 @@
+<h1>~ SIGN UP ~</h1>
+
+	<% if @user.errors.any? %>
+			<% for message in @user.errors.full_messages %>
+			<div class="alert alert-warning"> <%= message %> </div>
+			<% end %>
+	<% end %>
+	<%= render "shared/flash" %>
+
+<%= bootstrap_form_for :user do |f| %>
+	<%= f.text_field :name, placeholder: "Enter your name" %>
+  <%= f.text_field :email, placeholder: "Enter your email" %>
+  <%= f.password_field :password, placeholder: "Enter your password"%>
+  <%= f.password_field :password_confirmation, placeholder: "Re-Enter your password" %>
+
+  <%= f.submit "Sign Up"%>
+<% end %>
+<br>
+<%= debug flash %>

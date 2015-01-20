@@ -1,0 +1,15 @@
+<h1>posts show</h1>
+
+<h3> <%= @greeting %> </h3>
+<%= render "shared/flash" %>
+<ol>
+<% @post.each do |post| %>
+	<blockquote>
+  <span class="glyphicon glyphicon-heart-empty"></span>
+	<%= link_to post.title, post.link %>
+<br />
+  <footer><%= post.link %> | <%= post.user ? post.user.name : "Anonymous"	%></footer>
+</blockquote>
+<% end %>
+
+<%= link_to "Make A New Post", posts_create_path %>

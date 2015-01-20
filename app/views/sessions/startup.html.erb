@@ -1,0 +1,7 @@
+<h1>~Home Page~</h1>
+
+<%=  flash.inspect  %>
+<h2>Hi <%= @current_user ? @current_user.name : "Friend" %></h2>
+<%= link_to "See All Posts", posts_path %>
+
+<%= link_to "Logout", logout_path %>

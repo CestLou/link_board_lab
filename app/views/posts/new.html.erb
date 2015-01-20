@@ -1,0 +1,11 @@
+<h1>Post of the day!</h1>
+
+<%= render "shared/flash" %>
+<%= bootstrap_form_for :post do |f| %>
+<%= f.text_field :title, placeholder: "Enter Title" %>
+<%= f.text_field :link, placeholder: "Ender Link Address" %>
+<%= f.submit "Post" %>
+<% end %>
+
+<p>or...</p>
+<%= link_to "Go back to all posts", posts_path %>
